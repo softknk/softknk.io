@@ -1,9 +1,9 @@
-.idea
-.profiles
-.out
-.target
-.system
-.logs
+idea
+profiles
+out
+target
+system
+logs
 *.iml
 
 # Compiled class file
