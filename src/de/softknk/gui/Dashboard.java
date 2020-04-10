@@ -45,7 +45,6 @@ public class Dashboard extends VBox {
         operations[4] = new FactoryOperation(factoryLevel);
 
         for (int i = 0; i < operations.length; i++) {
-    //        this.operations[i].getData().setTranslateY(Dashboard.HEIGHT / operations.length * i);
             this.getChildren().add(this.operations[i].getData());
             this.operations[i].init();
         }
