@@ -44,7 +44,7 @@ public class Player extends Entity implements Moveable {
     }
 
     private boolean isCollision(Point point) {
-        //if the distance between the two centers (player and point) is less than the two radii then there is a collision
+        //if the distance between the two centers (player and point) is less than the two radii then there is a collision!
         return (Vector.distanceBetween(new Vector.Vector2D(this.startX + RADIUS, this.startY + RADIUS),
                 new Vector.Vector2D(point.getX() + Point.RADIUS, point.getY() + Point.RADIUS)) < Point.RADIUS + RADIUS);
     }
