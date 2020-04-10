@@ -9,12 +9,13 @@ import javafx.animation.Timeline;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 import java.text.DecimalFormat;
 
-public class Dashboard extends Pane {
+public class Dashboard extends VBox {
 
     public static final double WIDTH = AppSettings.WINDOW_WIDTH * 0.20;
     public static final double HEIGHT = AppSettings.WINDOW_HEIGHT - 50;
@@ -44,7 +45,7 @@ public class Dashboard extends Pane {
         operations[4] = new FactoryOperation(factoryLevel);
 
         for (int i = 0; i < operations.length; i++) {
-            this.operations[i].getData().setTranslateY(Dashboard.HEIGHT / operations.length * i);
+    //        this.operations[i].getData().setTranslateY(Dashboard.HEIGHT / operations.length * i);
             this.getChildren().add(this.operations[i].getData());
             this.operations[i].init();
         }
