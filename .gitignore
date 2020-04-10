@@ -1,3 +1,11 @@
+.idea
+.profiles
+.out
+.target
+.system
+.logs
+*.iml
+
 # Compiled class file
 *.class
 
@@ -11,7 +19,6 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.nar
 *.ear
