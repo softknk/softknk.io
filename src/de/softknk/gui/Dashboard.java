@@ -1,5 +1,6 @@
 package de.softknk.gui;
 
+import de.softknk.data.SaveGameData;
 import de.softknk.main.AppSettings;
 import de.softknk.main.SoftknkioApp;
 import de.softknk.model.operations.*;
@@ -83,6 +84,7 @@ public class Dashboard extends VBox {
             Timeline timeline = new Timeline(new KeyFrame(Duration.millis(500), actionEvent -> {
                 showPointsPerSecond();
                 SoftknkioApp.matchfield.getPlayer().increaseScore(pointsPerSecond());
+                SaveGameData.saveData();
             }));
             timeline.setCycleCount(Timeline.INDEFINITE);
             timeline.play();
