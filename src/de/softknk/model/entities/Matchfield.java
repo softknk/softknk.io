@@ -31,7 +31,7 @@ public class Matchfield extends Entity implements Moveable {
         this.mode = Mode.DARK;
 
         grid = new GridPane();
-        grid.setBorder(new Border(new BorderStroke(Color.WHITE, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+   //     grid.setBorder(new Border(new BorderStroke(Color.WHITE, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
         grid.setPrefSize(AppSettings.MAP_WIDTH, AppSettings.MAP_HEIGHT);
         grid.setBackground(new Background(new BackgroundFill(this.mode.getGridColor(), CornerRadii.EMPTY, Insets.EMPTY)));
 
