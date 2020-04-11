@@ -82,7 +82,6 @@ public class Dashboard extends VBox {
         public void startUpdateTimeline() {
             Timeline timeline = new Timeline(new KeyFrame(Duration.millis(500), actionEvent -> {
                 showPointsPerSecond();
-                System.out.println(pointsPerSecond());
                 SoftknkioApp.matchfield.getPlayer().increaseScore(pointsPerSecond());
             }));
             timeline.setCycleCount(Timeline.INDEFINITE);
