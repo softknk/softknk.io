@@ -8,7 +8,6 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
@@ -22,19 +21,20 @@ public class Dashboard extends VBox {
     public static final double TRANSLATE = 25;
 
     private Operation[] operations;
-    private Label pointsPerSecond;
+    private Label pointsPerSecond_label;
 
     public Dashboard(int pointLevel, int machineLevel, int excavatorLevel, int mineLevel, int factoryLevel) {
         this.setPrefSize(WIDTH, HEIGHT);
         this.setStyle("-fx-background-color: rgba(138, 109, 98, 0.35);");
+        this.setSpacing(0);
         this.setTranslateX(TRANSLATE);
         this.setTranslateY(TRANSLATE);
 
         this.operations = new Operation[5];
         this.initOperations(pointLevel, machineLevel, excavatorLevel, mineLevel, factoryLevel);
 
-        this.pointsPerSecond = new PointsPerSecond();
-        ((PointsPerSecond) this.pointsPerSecond).startUpdateTimeline();
+        this.pointsPerSecond_label = new PointsPerSecond();
+        ((PointsPerSecond) this.pointsPerSecond_label).startUpdateTimeline();
     }
 
     private void initOperations(int pointLevel, int machineLevel, int excavatorLevel, int mineLevel, int factoryLevel) {
@@ -59,8 +59,8 @@ public class Dashboard extends VBox {
         return this.operations;
     }
 
-    public Label getPointsPerSecond() {
-        return this.pointsPerSecond;
+    public Label getPointsPerSecond_label() {
+        return this.pointsPerSecond_label;
     }
 
     private class PointsPerSecond extends Label {
@@ -80,7 +80,11 @@ public class Dashboard extends VBox {
         }
 
         public void startUpdateTimeline() {
-            Timeline timeline = new Timeline(new KeyFrame(Duration.millis(500), actionEvent -> showPointsPerSecond()));
+            Timeline timeline = new Timeline(new KeyFrame(Duration.millis(500), actionEvent -> {
+                showPointsPerSecond();
+                System.out.println(pointsPerSecond());
+                SoftknkioApp.matchfield.getPlayer().increaseScore(pointsPerSecond());
+            }));
             timeline.setCycleCount(Timeline.INDEFINITE);
             timeline.play();
         }

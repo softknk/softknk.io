@@ -1,10 +1,6 @@
 package de.softknk.model.operations;
 
-import de.softknk.main.SoftknkioApp;
 import de.softknk.model.util.Loader;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.util.Duration;
 
 public class FactoryOperation extends Operation {
 
@@ -18,9 +14,7 @@ public class FactoryOperation extends Operation {
 
     @Override
     public void init() {
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), actionEvent -> SoftknkioApp.matchfield.getPlayer().increaseScore(points_per_second)));
-        timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.play();
+        //
     }
 
     @Override

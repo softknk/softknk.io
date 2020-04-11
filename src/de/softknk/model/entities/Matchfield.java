@@ -19,7 +19,7 @@ public class Matchfield extends Entity implements Moveable {
 
     private Player player;
     private List<Point> points;
-    private final int pointAmount = 220;
+    private final int pointAmount = 270;
     private Dashboard dashboard;
     private Mode mode;
     private GridPane grid;

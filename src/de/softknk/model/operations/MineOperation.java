@@ -18,9 +18,7 @@ public class MineOperation extends Operation {
 
     @Override
     public void init() {
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), actionEvent -> SoftknkioApp.matchfield.getPlayer().increaseScore(points_per_second)));
-        timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.play();
+      //
     }
 
     @Override

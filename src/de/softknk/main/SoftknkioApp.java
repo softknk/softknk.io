@@ -115,7 +115,7 @@ public class SoftknkioApp extends GameApplication {
     protected void initUI() {
         getGameScene().addUINode(matchfield.getDashboard());
         getGameScene().addUINode(matchfield.getPlayer().getData());
-        getGameScene().addUINode(matchfield.getDashboard().getPointsPerSecond());
+        getGameScene().addUINode(matchfield.getDashboard().getPointsPerSecond_label());
     }
 
     @Override

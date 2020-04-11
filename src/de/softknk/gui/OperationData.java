@@ -24,7 +24,7 @@ public class OperationData extends Button implements EventHandler {
         this.setContentDisplay(ContentDisplay.TOP);
         this.setAlignment(Pos.CENTER);
         this.setGraphic(new ImageView(operationImage));
-        this.setFont(Loader.loadFont(AppSettings.DEFAULT_FONT, 16));
+        this.setFont(Loader.loadFont(AppSettings.DEFAULT_FONT, 14));
         this.setTextFill(Color.WHITE);
 
         this.operation = operation;
@@ -38,9 +38,6 @@ public class OperationData extends Button implements EventHandler {
     }
 
     public void update() {
-        if (operation.getLevel() >= 100)
-            this.setFont(Loader.loadFont(AppSettings.DEFAULT_FONT, 15));
-
         if (operation.getPrice() <= 1_000_000) {
             this.setText("LVL. " + operation.getLevel() + "  |  " + operation.getPrice() / 1000.0 + "k");
         } else {
