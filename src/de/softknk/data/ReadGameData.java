@@ -29,8 +29,6 @@ public class ReadGameData {
             BufferedReader reader = new BufferedReader(new FileReader(DataFile.dataFile()));
             return Optional.of(reader.lines().collect(Collectors.toList()));
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -39,19 +37,9 @@ public class ReadGameData {
     }
 
     private static void initFile(File file) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter(DataFile.dataFile()));
-        writer.write("softknk");
-        writer.newLine();
-        writer.write("0");
-        writer.newLine();
-        writer.write("1");
-
-        for (int i = 0; i < 4; i++) {
-            writer.newLine();
-            writer.write("0");
-        }
-
+        PrintStream _writer = new PrintStream(new FileOutputStream(file, true));
+        _writer.append("<nickname>\n" + "0\n" + "1\n" + "0\n" + "0\n" + "0\n" + "0");
         file.setWritable(false);
-        writer.close();
+        _writer.close();
     }
 }

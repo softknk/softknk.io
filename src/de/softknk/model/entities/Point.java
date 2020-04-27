@@ -9,10 +9,11 @@ import javafx.scene.shape.Circle;
 
 public class Point extends Entity implements Moveable {
 
-    public static final double RADIUS = 6.2;
+    public double RADIUS;
     private static int scoreValue;
 
     public Point() {
+        RADIUS = Math.random() * 5 + 3.2;
         this.setType(EntityType.POINT);
         this.setPosition(MapPoint.randomX(RADIUS), MapPoint.randomY(RADIUS));
         this.getViewComponent().addChild(new Circle(RADIUS, PointColor.random()));
